@@ -1,0 +1,105 @@
+---
+layout: page
+title: Hi! I'm Qin Zheng.     
+hide_description: False
+sitemap: false
+permalink: /resume/
+---
+>
+  In 2018, I received my bachelor degree in logistics engineering from South China University of Technology. During my undergraduate, I developed an interest in algorithms and data science, so I chose to take courses like data mining and did a project related to text-mining. After that, I've been working as supply chain planner and forecast analyst at TP-LINK and DJI sequently. Now I'm an algorithm engineer at a startup. 
+>  
+  I have experience in successfully applying statistical methods and machine learning to specific problems and currently I'm studying about optimization and simulation as well.
+{:.lead}  
+  **I'm looking for a Ph.D position around the world to study on decision making under uncertainty or subjects related to it, please reach me if you have any suggetion. Thanks!**
+{:.lead}
+
+<!-- ![View PDF](../assets/img/svg/pdf.svg) -->
+<!-- <a href="./CV.pdf">View PDF</a> -->
+## ![contact](../assets/img/svg/mail.svg) Contact
+ Location : Nanshan District, Shenzhen, China
+ {:.heading.flip-title}
+ {:.faded}
+ Email : <qin-zzz@outlook.com>
+ {:.heading.flip-title}
+ {:.faded}
+
+<!-- ![call](../assets/img/svg/cellphone.svg): (+86) 188-2021-3673
+{:.heading.flip-title} -->
+
+
+## ![work](../assets/img/svg/work_experience.svg) Work Experience
+****
+*Mar 2021 - Present*
+{:.faded}
+<!-- {:.smaller} -->
+**Algorithm Engineer** at **[Aival Data](http://www.9zdata.cn/)**
+
+Participate in the supply chain optimization project of Watsons, a famous beauty retail brand in China, responsible for designing algorithms that can handle online and offline retail store sales demand forecasts, products distribution and replenishment.
+{:.note title="SUMMARY"}
+- Complete the analysis of prices elasticity and the analysis of the impact of different promotions on sales
+- Apply word embedding to represent static information like product descriptions and attributes as a part of feature engineering. 
+- Train GBDT and LSTM models and compare the performance
+- Adopt methods like transfer learning, similar product clustering and other methods to predict new product sales, increasing the accuracy by 5% to 10%
+- Optimize code performance and accomplish automated scripts 
+
+----
+*Sep 2020 - Feb 2021*
+{:.faded}
+<!-- {:.smaller} -->
+**Demand Forecast Analyst (Spare Parts Management)** at **[DJ-Innovations (DJI)](https://www.dji.com/)**
+
+Predicted the maintenance volume of consumer-level and industry-level drones at service outlets around the world.Evaluated the forecast performance, identified abnormal points and analyzed the causes, and put forward business improvement suggestions for service points involved. Participated in formulating the annual budget and monthly HRM plan for all maintenance sites
+{:.note title="SUMMARY1"}
+- Predicted the maintenance volume of consumer-level and industry-level drones at service outlets around the world
+- Introduced the feature of repair rate and improved the accuracy of the maintenance volume forecast by 5% to 20%
+
+Optimized the spare parts prediction model and its parameters.
+{:.note title="SUMMARY2"}
+- Introduced quantile regression in demand forecasting and shortened the average service response time by 0.5 to 1 day
+
+----
+*Jul 2018 - Jun 2020*
+{:.faded}
+<!-- {:.smaller} -->
+**Material Planning Specialist** at **[TP-LINK](https://www.tp-link.com/)**
+
+Managed the four-stage supply chain and formulated material plan.
+{:.note title="SUMMARY1"}
+- Improved the accuracy and efficiency of material planning by optimizing the calculation logic of the ASCP system, supplementing the linkage logic of the ECO/ECN module and the MRP module of the ERP system
+- Sorted out the repetitive task process in the work, formulated SOP and trained new employees
+- Used formulas and VBA to collate data and process transfer quantity among warehouses, saving my team’s working time 150-200 hours per month
+
+Participated in the production demand forecast optimization project.
+{:.note title="SUMMARY2"}
+- Verified the feasibility of Panel Data, ARIMA and machine learning models
+
+## ![project](../assets/img/svg/project_experience.svg) Research
+****
+*Jul 2015 - Jul 2016*
+{:.faded}
+**Research Assistant** 
+at **Analysis on the Flow Direction of Commodities in Guangdong Province**
+
+- Sorted out the shipping data provided by the Department of Transportation of Guangdong Province and calculated relevant indicators. Applied Excel tools such as pivot table to significantly improve the data sorting efficiency
+- Identified the seasonal changes of the commodities of different ports over the years
+- Performed a correlation analysis on the inflow and outflow of different ports and commodities
+- Identified the abnormal points of the flow over the years, and explained the abnormal reasons (policy impact, breaking news, and sudden meteorological changes) by consulting the yearbook and other materials
+
+## ![education](../assets/img/svg/education_experience.svg) Education
+****
+*Sep 2014 - Jul 2018*
+{:.faded}
+**Bachelor Engineering** in **Logistics Engineering**
+from **[South China University of Technology (SCUT)](https://www.scut.edu.cn/)**
+
+- GPA: 3.48/4.0 (27/76)
+- Core courses accomplished: Linear Algebra & Analytic Geometry (88/100), Data Mining (86/100), Logistics Statistics (86/100)
+
+## ![skills](../assets/img/svg/skills.svg) Other
+- Language: Chinese (native speaker), English (IELTS: 7.0) and Spanish (A2)
+- Computer: Python, VBA, SQL, C++, Gurobi, pytorch/tensorflow, Linux, Excel and PPT
+- Interest: travel, mountaineering, editing and aerial photography
+
+<!-- ## References
+>
+It is my pleasure to recommend Richard, his performance working as a consultant for Main St. Company proved that he will be a valuable addition to any company. -->

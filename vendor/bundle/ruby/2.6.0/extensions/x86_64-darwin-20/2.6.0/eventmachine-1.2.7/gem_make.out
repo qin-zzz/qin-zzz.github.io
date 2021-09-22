@@ -1,0 +1,16 @@
+current directory: /Users/zq/qin-zzz/hydejack-starter-kit-9.1.4/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/Users/zq/.rvm/rubies/ruby-2.6.6/bin/ruby -I /Users/zq/.rvm/rubies/ruby-2.6.6/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210914-66127-xffn2k.rb extconf.rb
+creating Makefile
+
+current directory: /Users/zq/qin-zzz/hydejack-starter-kit-9.1.4/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" clean
+
+current directory: /Users/zq/qin-zzz/hydejack-starter-kit-9.1.4/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR="
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.bundle
+
+current directory: /Users/zq/qin-zzz/hydejack-starter-kit-9.1.4/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 fastfilereaderext.bundle ./.gem.20210914-66127-12h29bu

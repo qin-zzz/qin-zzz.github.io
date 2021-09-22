@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>/posts/2021-09-10-Crontab-Setting-Scheduled-Tasks-in-Linux/</loc>
+<lastmod>2021-09-20T21:51:34+08:00</lastmod>
+</url>
+<url>
+<loc>/posts/2021-09-15-The-Limitation-of-Using-GBDT-for-regression/</loc>
+<lastmod>2021-09-19T23:55:14+08:00</lastmod>
+</url>
+<url>
+<loc>/</loc>
+<lastmod>2021-03-30T22:43:59+08:00</lastmod>
+</url>
+<url>
+<loc>/</loc>
+<lastmod>2021-03-30T22:43:59+08:00</lastmod>
+</url>
+<url>
+<loc>/posts/</loc>
+<lastmod>2021-09-19T23:58:27+08:00</lastmod>
+</url>
+<url>
+<loc>/about/</loc>
+<lastmod>2021-09-21T22:31:39+08:00</lastmod>
+</url>
+<url>
+<loc>/resume/CV.pdf</loc>
+<lastmod>2021-09-20T13:43:49+08:00</lastmod>
+</url>
+</urlset>

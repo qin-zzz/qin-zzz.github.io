@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2021-09-23T07:07:57+08:00</updated><id>/feed.xml</id><title type="html">Qin Zheng</title><subtitle>Hydejack is a boutique Jekyll theme for hackers, nerds, and academics, with a focus on personal sites that are meant to impress.
+</subtitle><author><name>Qin Zheng</name><email>qinzheng4016@gmail.com</email></author><entry><title type="html">The Limitation of Using GBDT for Regression</title><link href="/posts/2021-09-15-The-Limitation-of-Using-GBDT-for-regression/" rel="alternate" type="text/html" title="The Limitation of Using GBDT for Regression" /><published>2021-09-15T18:00:40+08:00</published><updated>2021-09-19T23:55:14+08:00</updated><id>/posts/The-Limitation-of-Using-GBDT-for-regression</id><content type="html" xml:base="/posts/2021-09-15-The-Limitation-of-Using-GBDT-for-regression/">&lt;!-- # The Limitation of Using GBDT for Regression --&gt;
+
+&lt;p&gt;Tree models usually produce good predictions when the time series is smooth, but perform poor when the time series shows a tendency.&lt;/p&gt;
+
+&lt;p&gt;That’s because tree models do not infer. Take a single-tree as an example, the prediction made by a leaf node is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mean/medium/min/max/...&lt;/code&gt; values of all trained samples belong to this node, while for the integrated model of GBDT, a sample’s prediction is the weighted average of the predictions made by the leaf nodes it falls on in each subtree, which leads to the problem that &lt;strong&gt;the final prediction must be between the maximum and minimum values of the time series.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p class=&quot;note&quot; title=&quot;EXAMPLE&quot;&gt;Assume the time series to be [1,2,3,4,5,6, … . 1000], so the final prediction made by a tree or integrated decision tree will not be greater than 1000 in most cases, which means that once we reach an ever high sales in the future, like 2000 or 3000, the tree would fail to capture this trend in advance.&lt;/p&gt;
+
+&lt;p&gt;So what should we do if we still want to use tree models for extrapolating predictions?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;One suggestion is to manually construct features that can imply future tendency&lt;/strong&gt;. For instance, we can fit a simple linear model first and use the predictions it made as a part of the inputs of the following tree model. However, the method suggested above has its downsides too. In business scenario, we have thousands of goods to predict, it is almost impossible to maintain a linear model for each of them. Besides, the predictions of linear models are easily affected by outliers, which may bring more uncertainty to the tree model.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Another solution is to remove the tendency from time series, which involves time series decomposition&lt;/strong&gt;. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;statsmodels&lt;/code&gt; library provides an implementation of the naive, or classical, decomposition method in a function called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;seasonal_decompose()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;statsmodels.tsa.seasonal&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;seasonal_decompose&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;series&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[...]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;seasonal_decompose&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;series&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'additive'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seasonal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;observed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Qin Zheng</name><email>qinzheng4016@gmail.com</email></author><category term="posts" /><summary type="html">Tree models usually produce good predictions when the time series is smooth, but perform poor when the time series shows a tendency. That’s because tree models do not infer. Take a single-tree as an example, the prediction made by a leaf node is the mean/medium/min/max/... values of all trained samples belong to this node, while for the integrated model of GBDT, a sample’s prediction is the weighted average of the predictions made by the leaf nodes it falls on in each subtree, which leads to the problem that the final prediction must be between the maximum and minimum values of the time series. Assume the time series to be [1,2,3,4,5,6, … . 1000], so the final prediction made by a tree or integrated decision tree will not be greater than 1000 in most cases, which means that once we reach an ever high sales in the future, like 2000 or 3000, the tree would fail to capture this trend in advance. So what should we do if we still want to use tree models for extrapolating predictions? One suggestion is to manually construct features that can imply future tendency. For instance, we can fit a simple linear model first and use the predictions it made as a part of the inputs of the following tree model. However, the method suggested above has its downsides too. In business scenario, we have thousands of goods to predict, it is almost impossible to maintain a linear model for each of them. Besides, the predictions of linear models are easily affected by outliers, which may bring more uncertainty to the tree model. Another solution is to remove the tendency from time series, which involves time series decomposition. The statsmodels library provides an implementation of the naive, or classical, decomposition method in a function called seasonal_decompose(). from statsmodels.tsa.seasonal import seasonal_decompose series = [...] result = seasonal_decompose(series, model='additive') print(result.trend) print(result.seasonal) print(result.resid) print(result.observed)</summary></entry><entry><title type="html">Crontab: Setting Scheduled Tasks in Linux</title><link href="/posts/2021-09-10-Crontab-Setting-Scheduled-Tasks-in-Linux/" rel="alternate" type="text/html" title="Crontab: Setting Scheduled Tasks in Linux" /><published>2021-09-10T18:00:40+08:00</published><updated>2021-09-20T21:51:34+08:00</updated><id>/posts/Crontab-:-Setting-Scheduled-Tasks-in-Linux</id><content type="html" xml:base="/posts/2021-09-10-Crontab-Setting-Scheduled-Tasks-in-Linux/">&lt;p&gt;In Linux, periodic tasks are generally handled by &lt;strong&gt;cron&lt;/strong&gt;, a daemon. Cron’s configuration file is called &lt;strong&gt;“crontab”&lt;/strong&gt;, which is short for “cron table”.&lt;/p&gt;
+
+&lt;p&gt;With the crontab command, we can execute specified system commands or shell scripts at fixed intervals. The time interval can be in any combination of minutes, hours, days, months, weeks and more.&lt;/p&gt;
+
+&lt;p&gt;This command is ideal for tasks such as periodic log analysis or data backup.
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h4&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#table-of-contents&quot; id=&quot;markdown-toc-table-of-contents&quot;&gt;Table of Contents&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#overview&quot; id=&quot;markdown-toc-overview&quot;&gt;Overview&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-crontab-command&quot; id=&quot;markdown-toc-1-crontab-command&quot;&gt;1. Crontab Command&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-crontab-files&quot; id=&quot;markdown-toc-2-crontab-files&quot;&gt;2. Crontab Files&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3-cron-command-entries&quot; id=&quot;markdown-toc-3-cron-command-entries&quot;&gt;3. Cron command entries&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#31-time-and-date-fields&quot; id=&quot;markdown-toc-31-time-and-date-fields&quot;&gt;3.1. Time and date fields&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#32-environment-settings&quot; id=&quot;markdown-toc-32-environment-settings&quot;&gt;3.2. Environment settings&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#33-redirect-loggings&quot; id=&quot;markdown-toc-33-redirect-loggings&quot;&gt;3.3. Redirect loggings&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#how-to&quot; id=&quot;markdown-toc-how-to&quot;&gt;How to&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#reference&quot; id=&quot;markdown-toc-reference&quot;&gt;Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;overview&quot;&gt;Overview&lt;/h4&gt;
+
+&lt;h5 id=&quot;1-crontab-command&quot;&gt;1. Crontab Command&lt;/h5&gt;
+
+&lt;p&gt;The &lt;strong&gt;crontab&lt;/strong&gt; command is used to view or edit the table of commands to be run by &lt;strong&gt;cron&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;crontab [-u user] [-l | -r | -e] [-i] [-s] 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-u user&lt;/code&gt; : Specifies the user whose crontab is to be viewed or modified.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-e&lt;/code&gt; : Edits a copy of the user’s crontab file or creates an empty file to edit if the crontab file does not exist for a valid UserName.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-l&lt;/code&gt; : Lists the user’s crontab file.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-r&lt;/code&gt; : Removes the user’s crontab file from the crontab directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-i&lt;/code&gt; : Reminds users before removing a crontab file.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-s&lt;/code&gt; : Adds SELINUX security to crontab file.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;2-crontab-files&quot;&gt;2. Crontab Files&lt;/h5&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/crontab&lt;/code&gt; : main system crontab file.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/cron.d/&lt;/code&gt;: a directory for storing system crontabs.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/var/spool/cron/&lt;/code&gt; : a directory for storing crontabs defined by users.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;3-cron-command-entries&quot;&gt;3. Cron command entries&lt;/h5&gt;
+
+&lt;p&gt;Each &lt;strong&gt;cron&lt;/strong&gt; command entry in the crontab file has &lt;strong&gt;five time and date fields&lt;/strong&gt; (followed by a &lt;strong&gt;username&lt;/strong&gt;, only if it’s the system crontab file), followed by &lt;strong&gt;a command&lt;/strong&gt;. As below :&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; *  *  *  *  * user-name  command to be executed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;31-time-and-date-fields&quot;&gt;3.1. Time and date fields&lt;/h6&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |    
+# *  *  *  *  * user-name  command to be executed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Asterisk (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;) : Specifies all possible values for a field, e.g. every hour or every day.&lt;/li&gt;
+  &lt;li&gt;Comma (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;,&lt;/code&gt;) operator specifies a list of values, for example, “1,2,5,7,8,9”&lt;/li&gt;
+  &lt;li&gt;Middle bar (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;) : Specifies a range of values, e.g. “2-6” means “2,3,4,5,6”&lt;/li&gt;
+  &lt;li&gt;Forward slash (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt;) : Specifies the frequency of time intervals, for example, “0-23/2” means once every two hours. Also the forward slash can be used together with an asterisk, for example */10, if used in the minute field, means once every ten minutes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The command below is expected to run the &lt;strong&gt;calendar&lt;/strong&gt; command every 5 minutes during 09:00 and 16:00 from Monday through Friday, between January and May and between September and December.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*/5 9-16 * 1-5,9-12 1-5 /usr/bin/calendar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;32-environment-settings&quot;&gt;3.2. Environment settings&lt;/h6&gt;
+
+&lt;p&gt;If &lt;strong&gt;a command is executed manually but fail to work in the crontab&lt;/strong&gt;, it is usually a problem with the environment variables.&lt;/p&gt;
+&lt;blockquote&gt;
+
+  &lt;p&gt;When we execute a task manually, the process is done in the current environment and the system automatically executes task scheduling without loading any environment variables. In order that the system can execute the task scheduling correctly, it is necessary to specify all the environment variables required for the task to run in the crontab file.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Four ways of specifying environment variables are listed below.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;1) Use the absolute path if a file is involed&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0 * * * * /root/anaconda3/envs/my_env/bin/python3 /home/test_python/test_2.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;2) Specify the interpreter path in the file&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;To replace the first line of the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#!/usr/bin/python
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;with:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#!/root/anaconda3/envs/my_env/bin/python3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;3) Add the environment variable to&lt;/em&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/crontab&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0 * * * * . /etc/profile;/bin/sh /var/www/java/audit_no_count/bin/restart_audit.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;4) Use&lt;/em&gt; &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;source&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;!/bin/sh
+source /etc/profile
+export RUN_CONF=/home/d139/conf/platform/cbp/cbp_jboss.conf
+/usr/local/jboss-4.0.5/bin/run.sh -c mev &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h6 id=&quot;33-redirect-loggings&quot;&gt;3.3. Redirect loggings&lt;/h6&gt;
+
+&lt;p&gt;Cron will email to the user (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/var/spool/mail/&lt;/code&gt;) all output of the commands it runs, so the log information will be very large day by day and may affect the normal operation of the system. To silence this, we can redirect the output to a log file or to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/dev/null&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0 */3 * * * /usr/local/apache2/apachectl restart &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;how-to&quot;&gt;How to&lt;/h4&gt;
+
+&lt;p&gt;First enter the terminal as follow:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# enter the crontab file
+crontab -e
+
+# add an entry
+0 1 * * * /root/script/scp.sh &amp;gt;&amp;gt;/tmp/scp.log 2 &amp;gt;&amp;amp; 1
+
+# or remove an entry
+#0 1 * * * /root/script/scp.sh &amp;gt;&amp;gt;/tmp/scp.log 2 &amp;gt;&amp;amp; 1
+
+# check the setting
+crontab -l
+
+# view the loggings
+tail -f /var/log/cron
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If the EDITOR environment variable exists, the command invokes the editor it specifies. Otherwise, the crontab command uses the &lt;strong&gt;vi editor&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Below are some commands in vi editor:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; – Insert at cursor (goes into insert mode)&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:w&lt;/code&gt; – Save the file but keep it open&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:q&lt;/code&gt; – Quit without saving&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:wq&lt;/code&gt; – Save the file and quit&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ESC&lt;/code&gt; – Terminate insert mode (goes into view mode)&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dd&lt;/code&gt; – Delete line&lt;/p&gt;
+
+&lt;h4 id=&quot;reference&quot;&gt;Reference&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://man7.org/linux/man-pages/man5/crontab.5.html1&quot;&gt;https://man7.org/linux/man-pages/man5/crontab.5.html1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ibm.com/docs/en/aix/7.1?topic=c-crontab-command&quot;&gt;https://www.ibm.com/docs/en/aix/7.1?topic=c-crontab-command&lt;/a&gt;&lt;/p&gt;</content><author><name>Qin Zheng</name><email>qinzheng4016@gmail.com</email></author><category term="posts" /><summary type="html">In Linux, periodic tasks are generally handled by cron, a daemon. Cron’s configuration file is called “crontab”, which is short for “cron table”.</summary></entry></feed>
