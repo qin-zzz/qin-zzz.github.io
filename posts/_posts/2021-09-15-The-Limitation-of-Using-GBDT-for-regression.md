@@ -9,7 +9,7 @@ blurb: "When GBDT regression fail to predict accurately"
 
 Tree models usually produce good predictions when the time series is smooth, but perform poor when the time series shows a tendency.
 
-That's because tree models do not infer. Take a single-tree as an example, the prediction made by a leaf node is the `mean/medium/min/max/...` values of all trained samples belong to this node, while for the integrated model of GBDT, a sample's prediction is the weighted average of the predictions made by the leaf nodes it falls on in each subtree, which leads to the problem that **the final prediction must be between the maximum and minimum values of the time series.** 
+That's because tree models do not extrapolate. Take a single-tree as an example, the prediction made by a leaf node is the `mean / medium / min / max /...` values of all trained samples belong to this node, while for the integrated model of GBDT, a sample's prediction is the weighted average of the predictions made by the leaf nodes it falls on in each subtree, which leads to the problem that **the final prediction must be between the maximum and minimum values of the time series.** 
 
 Assume the time series to be [1,2,3,4,5,6, ... . 1000], so the final prediction made by a tree or integrated decision tree will not be greater than 1000 in most cases, which means that once we reach an ever high sales in the future, like 2000 or 3000, the tree would fail to capture this trend in advance.
 {:.note title="EXAMPLE"}
@@ -30,3 +30,6 @@ print(result.seasonal)
 print(result.resid)
 print(result.observed)
 ~~~
+
+## Reference
+<https://www.kaggle.com/c/web-traffic-time-series-forecasting/discussion/38352>
