@@ -22,11 +22,13 @@ Normally speaking, the input data should be scaled when using algorithms involvi
 
 **In neural network, scaling is even more important when the loss function contains a regular term or using gradient descent methods for optimization.**
 
-For the former, in the linear model `y=wx+b`, any linear transformation of `x` (translation, deflation) can be "absorbed" by `w` and `b`. So in theory, this does not affect the fitting ability of the model. However, if the loss function contains a regular term, such as $\lambda ∣∣W∣∣^2$, where $\lambda$ is a hyperparameter that imposes penalties with a common ratio on the parameter of each feature $w_i$, scaling of data becomes important. Because for a one-dimensional feature $x_i$, the larger the scale is, the smaller the coefficient $w_i% would be, thus its weight in the regular term would be smaller, which indicates a smaller penalty on $w_i$. As a result, the loss function will relatively ignore those features with larger scale and emphasize those with smaller scale, which is not reasonable. 
+For the former, in the linear model `y=wx+b`, any linear transformation of `x` (translation, deflation) can be "absorbed" by `w` and `b`. So in theory, this does not affect the fitting ability of the model. However, if the loss function contains a regular term, such as $$\lambda ∣∣W∣∣^2$$, where $$\lambda$$ is a hyperparameter that imposes penalties with a common ratio on the parameter of each feature $$w_i$$, scaling of data becomes important. Because for a one-dimensional feature $$x_i$$, the larger the scale is, the smaller the coefficient $$w_i$$ would be, thus its weight in the regular term would be smaller, which indicates a smaller penalty on $$w_i$$. As a result, the loss function will relatively ignore those features with larger scale and emphasize those with smaller scale, which is not reasonable. 
 **From this perspective, feature scaling is to make the loss function look at each dimensional feature equally.**
 
 For the latter, The gradient descent method updates its parameters as follows:
+
 $$W(t+1)=W(t)-\eta\frac{dE(W)}{dW}$$,
+
 where `E(W)` is the loss function. Convergence implies that a minimal value is obtained and the partial derivative is zero in each dimension. The convergence rate depends on the distance from the initial position of the parameter to the local minima as well as the size of the learning rate $\eta$. The same learning rate is shared by all parameter dimensions (algorithms that assign separate learning rates to each dimension are not considered for the moment). However the descent rate of dimensions are different. In order to converge in each dimension, the learning rate is likely to be set the smallest one of all dimensions at the current position.
 
 ### Data Scaling Methods
@@ -75,6 +77,7 @@ Another fact to should be taken into consideration is that the scale of the outp
 ### Good practice
 
 In the 2018 paper [Applying Deep Learning to Airbnb Search](http://export.arxiv.org/pdf/1810.09591), the authors adopted two methods for scaling. For those features whose distributions resemble a normal distribution，they transform them with standardization; while for those look closer to a power law distribution (long-tailed), they transform them as following:
+
 $$log(\frac{1+feature_val}{1+median})$$
 
 From the instance above, we can see that there is no practice suitable for all scenerios. Problems can be complex and it may not be clear how to best scale all the variable. Whether input variables require scaling and what is the best way of scaling depend on the specifics of the problem and of each variable.
