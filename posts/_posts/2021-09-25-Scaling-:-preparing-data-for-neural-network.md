@@ -5,17 +5,16 @@ date:   2021-09-28 09:00:40
 blurb: "The first step from GBDT to NN"
 ---
 
-## Table of Contents
-
-* toc
-{:toc}
-
-## Scaling for continuous data
 Scaling data is the process of increasing or decreasing the magnitude according to a fixed ratio. By scaling data, **we hope to change the size but not the shape of the data.**
 
 It is a recommended yet not mandatory pre-processing step when working with deep learning neural networks. It helps handling disparities in units. During long processes it definitely helps reduce computational expenses. Sometimes it even determines whether the algorithm can work and how well it works.
 
 This blog is going to talk about feature scaling as well as target scaling, it is more suitable for time series problem, but some of the idea may also work with visual and NLP.
+
+### Table of Contents
+
+* toc
+{:toc}
 
 ### Why the scale of data matters
 
