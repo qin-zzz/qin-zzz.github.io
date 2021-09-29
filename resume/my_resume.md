@@ -19,7 +19,7 @@ permalink: /resume/
  Location : Nanshan District, Shenzhen, China
  {:.heading.flip-title}
  {:.faded}
- Email : <qin-zzz@outlook.com>
+ Email : <qinzheng2021@gmail.com>
  {:.heading.flip-title}
  {:.faded}
 

@@ -3,7 +3,7 @@
 # Change `author1` to your shortname.
 author1:
   name:              Qin Zheng
-  email:             qinzheng4016@gmail.com
+  email:             qinzheng2021@gmail.com
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
@@ -22,9 +22,9 @@ author1:
   # Comment/uncommet to show/hide
   # Rearrange to change the order in which they appear
   social:
-    twitter:         <username>
+    # twitter:         <username>
     github:          qin-zzz.github.io
-    email:           qinzheng4016@gmail.com
+    email:           qinzheng2021@gmail.com
     # rss:             https://<url>/feed.xml
     # facebook:        <username>
     # google:          <number>
