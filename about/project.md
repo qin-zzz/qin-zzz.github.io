@@ -16,9 +16,9 @@ permalink: /about/
 ## Sea
 ![bali1](/assets/img/projects/sea/bali-lovina-4.jpg)
 
-![bali2](/assets/img/projects/sea/bali-lovina-3.jpg）
+![bali2](/assets/img/projects/sea/bali-lovina-3.jpg)
 
-![bali3](/assets/img/projects/sea/bali-lovina-1.jpg）
+![bali2](/assets/img/projects/sea/bali-lovina-1.jpg)
 
 Photo BY qin-zzz 
 {:.figcaption} 

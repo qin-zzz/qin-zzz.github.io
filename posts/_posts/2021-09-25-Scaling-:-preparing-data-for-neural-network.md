@@ -25,9 +25,9 @@ For the former, in the linear model `y=wx+b`, any linear transformation of `x` (
 
 For the latter, The gradient descent method updates its parameters as follows:
 
-$$W(t+1)=W(t)-\eta\frac{dE(W)}{dW}$$,
+$$W(t+1)=W(t)-\eta\frac{dE(W)}{dW}$$
 
-where `E(W)` is the loss function. Convergence implies that a minimal value is obtained and the partial derivative is zero in each dimension. The convergence rate depends on the distance from the initial position of the parameter to the local minima as well as the size of the learning rate $\eta$. The same learning rate is shared by all parameter dimensions (algorithms that assign separate learning rates to each dimension are not considered for the moment). However the descent rate of dimensions are different. In order to converge in each dimension, the learning rate is likely to be set the smallest one of all dimensions at the current position.
+where `E(W)` is the loss function. Convergence implies that a minimal value is obtained and the partial derivative is zero in each dimension. The convergence rate depends on the distance from the initial position of the parameter to the local minima as well as the size of the learning rate $$\eta$$. The same learning rate is shared by all parameter dimensions (algorithms that assign separate learning rates to each dimension are not considered for the moment). However the descent rate of dimensions are different. In order to converge in each dimension, the learning rate is likely to be set the smallest one of all dimensions at the current position.
 
 ### Data Scaling Methods
 
