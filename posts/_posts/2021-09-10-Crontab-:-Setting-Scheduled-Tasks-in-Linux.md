@@ -13,8 +13,6 @@ With the crontab command, we can execute specified system commands or shell scri
 This command is ideal for tasks such as periodic log analysis or data backup.
 <br />
 
-#### Table of Contents
-
 * toc
 {:toc}
 

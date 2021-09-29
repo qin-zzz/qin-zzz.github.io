@@ -11,8 +11,6 @@ It is a recommended yet not mandatory pre-processing step when working with deep
 
 This blog is going to talk about feature scaling as well as target scaling, it is more suitable for time series problem, but some of the idea may also work with visual and NLP.
 
-### Table of Contents
-
 * toc
 {:toc}
 
