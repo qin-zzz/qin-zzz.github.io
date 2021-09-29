@@ -2,7 +2,7 @@
 layout: about
 title: Work
 description: >
-In this part, I am going to share omething interesting in my life. I enjoy traveling and photography during my spare time, the two hobbies bring me new friends and wonderful experience in life. I selected some photos I took in the recent years in China and Southeast Asia, and I would love to tell you the stories behind these photos in the future. Hope you enjoy them.
+ In this part, I am going to share omething interesting in my life. I enjoy traveling and photography during my spare time, the two hobbies bring me new friends and wonderful experience in life. I selected some photos I took in the recent years in China and Southeast Asia, and I would love to tell you the stories behind these photos in the future. Hope you enjoy them.
 permalink: /about/
 ---
 
