@@ -8,11 +8,7 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    
-    Open `_data/authors.yml` to edit this text.
+    Do what you think is right and leave others alone.
 
   # This photo will be used in the about section
   picture:
@@ -27,7 +23,7 @@ author1:
   # Rearrange to change the order in which they appear
   social:
     twitter:         <username>
-    github:          <qin-zzz.github.io>
+    github:          qin-zzz.github.io
     email:           qinzheng4016@gmail.com
     # rss:             https://<url>/feed.xml
     # facebook:        <username>
