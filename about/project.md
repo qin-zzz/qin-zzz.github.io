@@ -8,7 +8,7 @@ permalink: /about/
  This part is supposed to place some of my projects, however, it still takes some time before I can finish them. So I made a slideshow of photos I took in recent years in China and Southeast Asia as placeholders. I hope you can enjoy them.
  {:.lead}
 
-<html lang="en">
+<!-- <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -57,7 +57,7 @@ permalink: /about/
   </div>
 
   </body>
-</html>
+</html> -->
 
 
 ## Mountain
