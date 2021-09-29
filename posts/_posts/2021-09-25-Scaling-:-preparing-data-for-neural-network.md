@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Scaling: preparing continuous data for neural network"
+title:  "Scaling: Preparing Continuous Data for Neural Network"
 date:   2021-09-28 09:00:40
 blurb: "The first step from GBDT to NN"
 ---
