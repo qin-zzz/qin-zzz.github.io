@@ -14,11 +14,11 @@ permalink: /about/
 ![haba3](/assets/img/projects/mountain/deqen-haba-3.jpg)
 
 ## Sea
-![bali1](/assets/img/projects/sea/bali-lovina-4.jpg)
+![bali1](/assets/img/projects/sea/lovina4.jpg)
 
-![bali2](/assets/img/projects/sea/bali-lovina-3.jpg)
+![bali2](/assets/img/projects/sea/lovina3.jpg)
 
-![bali2](/assets/img/projects/sea/bali-lovina-1.jpg)
+![bali3](/assets/img/projects/sea/lovina1.jpg)
 
 Photo BY qin-zzz 
 {:.figcaption} 
