@@ -1,21 +1,21 @@
 ---
 layout: about
 title: Work
-description: 
+description: In this part, I would like to share with you something interesting in my life.
 permalink: /about/
 ---
 >
- This part is supposed to place some of my projects, however, it still takes some time before I can finish them. So I made a slideshow of photos I took in recent years in China and Southeast Asia as placeholders. I hope you can enjoy them.
+  I enjoy traveling and photography during holidays, the two hobbies bring me new friends and wonderful experience in life. I made a slideshow of photos I took in recent years in China and Southeast Asia as placeholders. I hope you enjoy them.
 
 ## Mountain
-![haba1](/assets/img/projects/mountain/deqen-haba-1.jpg){:.lead loading="lazy"}
-![haba2](/assets/img/projects/mountain/deqen-haba-2.jpg){:.lead loading="lazy"}
-![haba3](/assets/img/projects/mountain/deqen-haba-3.jpg){:.lead loading="lazy"}
+![haba1](/assets/img/projects/mountain/deqen-haba-1.jpg)
+![haba2](/assets/img/projects/mountain/deqen-haba-2.jpg)
+![haba3](/assets/img/projects/mountain/deqen-haba-3.jpg)
 
 ## Sea
 ![bali1](/assets/img/projects/sea/bali-lovina-4.jpg){:.lead loading="lazy"}
-![bali2](/assets/img/projects/sea/bali-lovina-3.jpg){:.lead loading="lazy"}
-![bali3](/assets/img/projects/sea/bali-lovina-1.jpg){:.lead loading="lazy"}
+![bali2](/assets/img/about/deqen.JPG){:.lead loading="lazy"}
+![bali3](/assets/img/about/ricefield.JPG}{:.lead loading="lazy"}
 
-Photo BY qin-zzz
+Photo BY qin-zzz 
 {:.figcaption} 
