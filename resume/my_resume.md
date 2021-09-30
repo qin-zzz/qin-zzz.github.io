@@ -97,7 +97,7 @@ from **[South China University of Technology (SCUT)](https://www.scut.edu.cn/)**
 
 ## ![skills](../assets/img/svg/skills.svg) Other
 - Language: Chinese (native speaker), English (IELTS: 7.0) and Spanish (A2)
-- Computer: Python, VBA, SQL, C++, Gurobi, pytorch/tensorflow, Linux, Excel and PPT
+- Computer: Python, VBA, SQL, C++, Gurobi, pytorch/tensorflow, LaTex, Linux, Excel and PPT
 - Interest: travel, mountaineering, editing and aerial photography
 
 <!-- ## References
