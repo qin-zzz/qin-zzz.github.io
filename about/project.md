@@ -6,7 +6,6 @@ description: >
 permalink: /about/
 ---
 
-
 <html lang="en">
 <head>
 ​    <!-- Required meta tags -->
@@ -36,25 +35,46 @@ permalink: /about/
 ​      <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
 ​      <li data-target="#carouselIndicators" data-slide-to="1"></li>
 ​      <li data-target="#carouselIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselIndicators" data-slide-to="3"></li>
 ​    </ol>
 
 <div class="carousel-inner">
 
   <div class="carousel-item active">
 
-​        <img class="d-block w-100" src="/assets/img/about/deqen.jpg" alt="First slide">
+​        <img class="d-block w-100" src="/assets/img/about/ricefield.jpg" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>LANGKAWI, MALAYSIA</h5>
+        </div>
 
 ​      </div>
 
   <div class="carousel-item">
 
-​        <img class="d-block w-100" src="/assets/img/about/ricefield.jpg" alt="Second slide">
+​        <img class="d-block w-100" src="/assets/img/about/deqen.jpg" alt="Second slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>DEQEN, YUNNNAN</h5>
+        </div>
 
 ​      </div>
 
   <div class="carousel-item">
 
 ​        <img class="d-block w-100" src="/assets/img/about/quanzhou.jpg" alt="Third slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>QUANZHOU, FUJIAN</h5>
+        </div>
+
+​      </div>
+
+​  </div>
+
+  <div class="carousel-item">
+
+​        <img class="d-block w-100" src="/assets/img/about/luoyang.jpg" alt="Fourth slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>LUOYANG, HENAN</h5>
+        </div>
 
 ​      </div>
 
@@ -95,5 +115,5 @@ permalink: /about/
 
 ![bali3](/assets/img/projects/sea/lovina1.jpg)
 
-Photo BY qin-zzz 
+PHOTO BY QIN-ZZZ
 {:.figcaption} 
