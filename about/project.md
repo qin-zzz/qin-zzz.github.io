@@ -29,7 +29,7 @@ permalink: /about/
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
-  <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselIndicators" class="carousel slide" data-ride="carousel">
 
 ​    <ol class="carousel-indicators">
 ​      <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
@@ -47,16 +47,16 @@ permalink: /about/
           <h5>LANGKAWI, MALAYSIA</h5>
         </div>
 
-​      </div>
+​  </div>
 
   <div class="carousel-item">
 
 ​        <img class="d-block w-100" src="/assets/img/about/deqen.jpg" alt="Second slide">
         <div class="carousel-caption d-none d-md-block">
-          <h5>DEQEN, YUNNNAN</h5>
+          <h5>DEQEN, YUNNAN</h5>
         </div>
 
-​      </div>
+​  </div>
 
   <div class="carousel-item">
 
@@ -64,8 +64,6 @@ permalink: /about/
         <div class="carousel-caption d-none d-md-block">
           <h5>QUANZHOU, FUJIAN</h5>
         </div>
-
-​      </div>
 
 ​  </div>
 
@@ -76,27 +74,27 @@ permalink: /about/
           <h5>LUOYANG, HENAN</h5>
         </div>
 
-​      </div>
-
 ​  </div>
 
-​  <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+​</div>
+
+​<a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
 
 ​      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 
 ​      <span class="sr-only">Previous</span>
 
-​  </a>
+​</a>
 
-​  <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+​<a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
 
 ​      <span class="carousel-control-next-icon" aria-hidden="true"></span>
 
 ​      <span class="sr-only">Next</span>
 
-​  </a>
+​</a>
 
-  </div>
+</div>
 </body>
 
 </html>
