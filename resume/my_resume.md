@@ -8,7 +8,7 @@ permalink: /resume/
 >
   I received my bachelor's degree in logistics engineering from the South China University of Technology in 2018. During my undergraduate, I developed an interest in algorithms and data science, so I chose to take courses like data mining and did a project related to text mining. After that, I've been working as a supply chain planner and a forecast analyst at TP-LINK and DJI seperately. Now I'm an algorithm engineer at a startup. 
 >  
-  I have experience in applying machine learning and statistical methods to specific problems and currently I'm learning about optimization and simulation as well.
+  I have experience in applying machine learning and statistical methods to specific problems and currently, I'm learning about optimization and simulation as well.
 
   **I'm looking for a Ph.D position to further study on decision making under uncertainty or subjects related to it, please reach me if you have any suggetions. Thanks!**
 {:.lead}
@@ -63,7 +63,7 @@ Optimized the spare parts prediction model and its parameters.
 <!-- {:.smaller} -->
 **Material Planning Specialist** at **[TP-LINK](https://www.tp-link.com/)**
 
-Managed the four-stage supply chain and formulated material plan.
+Managed the four-stage supply chain and formulated material plans.
 {:.note title="SUMMARY1"}
 - Improved material planning accuracy and efficiency by optimizing the calculation logic of the ASCP system and supplementing the linkage logic of the ECO/ECN module and the MRP module of the ERP system
 - Sorted out the repetitive task process and formulated SOP and trained new employees
@@ -83,7 +83,7 @@ at **Analysis on the Flow Direction of Commodities in Guangdong Province**
 - Sorted out the shipping data provided by the Department of Transportation of Guangdong Province and calculated relevant indicators. Applied Excel tools such as pivot table to significantly improve the data sorting efficiency
 - Identified the seasonal changes of the commodities of different ports over the years
 - Performed a correlation analysis on the inflow and outflow of different ports and commodities
-- Identified the abnormal points of the flow over the years, and explained the abnormal reasons (policy impact, breaking news, and sudden meteorological changes) by consulting the yearbook and other materials
+- Identified the abnormal points of the flow over the years and explained the abnormal reasons (policy impact, breaking news, and sudden meteorological changes) by consulting the yearbook and other materials
 
 ## ![education](../assets/img/svg/education_experience.svg) Education
 ****
