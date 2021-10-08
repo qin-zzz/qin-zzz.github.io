@@ -6,7 +6,7 @@ sitemap: false
 permalink: /resume/
 ---
 >
-  I received my bachelor degree in logistics engineering from South China University of Technology in 2018. During my undergraduate, I developed an interest in algorithms and data science, so I chose to take courses like data mining and did a project related to text-mining. After that, I've been working as supply chain planner and forecast analyst at TP-LINK and DJI sequently. Now I'm an algorithm engineer at a startup. 
+  I received my bachelor's degree in logistics engineering from the South China University of Technology in 2018. During my undergraduate, I developed an interest in algorithms and data science, so I chose to take courses like data mining and did a project related to text mining. After that, I've been working as a supply chain planner and a forecast analyst at TP-LINK and DJI seperately. Now I'm an algorithm engineer at a startup. 
 >  
   I have experience in applying machine learning and statistical methods to specific problems and currently I'm learning about optimization and simulation as well.
 
