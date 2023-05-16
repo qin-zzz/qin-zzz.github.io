@@ -6,9 +6,13 @@ profile_picture:
 ---
 
 <p>
-  Welcome! This site serves as an example for the Bay Jekyll theme. Bay is a very simple and minimal theme, directly inspired by Dan Grover's <a href="http://dangrover.com">website</a>.
+  Welcome! I am a first-year master's student specializing in Computer Science, with a focus on the track of Data Science & Engineering at <a href="https://www.eurecom.fr/">Eurecom</a>, located in Sophia Antipolis, France. In 2018, I completed my bachelor's degree at <a href="https://www.scut.edu.cn/en/">South China University of Technology</a>, where my study covered a wide range of topics including mathematics, bussiness, economics and computer science. 
 </p>
 
 <p>
-  You can find the source code and the instructions on <a href="https://github.com/eliottvincent/bay">GitHub</a>.
+  I spent four dynamic years honing my skills in the vibrant city of Shenzhen, China, woking in companies such as TP-Link and DJI, as well as a startup specializing in IT service solutions. 
+</p>
+
+<p>
+  Currently, I am particularly intrigued by the intersections of machine learning and domains like economics and cybersecurity.
 </p>
