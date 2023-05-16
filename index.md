@@ -10,7 +10,7 @@ profile_picture:
 </p>
 
 <p>
-  I spent four dynamic years honing my skills in the vibrant city of Shenzhen, China, woking in companies such as <a href="https://www.tp-link.com/en/">TP-Link</a> and <a href="https://www.dji.com/en">DJI</a>, as well as a startup specializing in IT solutions. 
+  I spent four dynamic years honing my skills in the vibrant city of Shenzhen, China, woking in companies such as <a href="https://www.tp-link.com/en/">TP-Link</a> and <a href="https://www.dji.com/en">DJ-Innovation</a>, as well as a startup specializing in IT solutions. 
 </p>
 
 <p>
