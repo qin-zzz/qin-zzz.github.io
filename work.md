@@ -15,6 +15,6 @@ items:
     description: The incorrect belief that if a particular event occurs more frequently than normal during the past, it is less likely to happen in the future (or vice versa), when it has otherwise been established that the probability of such events does not depend on what has happened in the past. In a study aimed at discovering if the negative autocorrelation that exists with the gambler's fallacy existed in the decision made by U.S. asylum judges, results showed that after two successive asylum grants, a judge would be 5.5% less likely to approve a third grant.
 ---
 
-I am collecting stories about applied mathamatics, fell free to contact me if you have some.
+I am collecting stories about applied mathamatics, feel free to contact me if you have some.
 <br />
 <br />
