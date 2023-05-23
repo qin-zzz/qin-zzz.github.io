@@ -8,7 +8,7 @@ items:
       src: /assets/img/work/benfordslaw.png
       alt: water
     description: In many real-life sets of numerical data, the leading digit is likely to be small. In sets that obey the law, the number 1 appears as the leading significant digit about 30% of the time, while 9 appears as the leading significant digit less than 5% of the time. One of the applications is in fraud detection. people who try to fabricate figures tend to distribute the digits uniformly, thus violating Benford's law.
-  - title: Gambler's fallacy
+  - title: Yellow Face
     image:
       src: /assets/img/work/yellowface.png
       alt: sand
