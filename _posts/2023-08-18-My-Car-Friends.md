@@ -4,8 +4,8 @@ title:  "The things that an 8-year-old can do"
 date:   2023-08-18 22:00:00
 ---
 
-After a month of driving, now I am not afraid of driving any more. However, yesterday I went on the longest journey in my life, I drove a distance of about 700km, from Landes to Normandy. I went through all the beautity. From the pinewoods in the morning light to the shadow of Plane tree, from the traffic in the city center to the freeway with nobody, and finally arrived at my destination.
+After a month of driving, I have conquered my fear of being behind the wheel. This newfound confidence led me to embark on the longest journey of my life just yesterday – a remarkable 700km drive from Landes to Normandy. Throughout this remarkable odyssey, I was treated to a breathtaking panorama of nature's wonders: from the golden embrace of morning light in the pinewoods to the cool refuge under the shade of Plane trees; from the bustling city center traffic to the tranquil expanses of an empty freeway, culminating in my triumphant arrival at the intended destination.
 
-I became the tempory friends of some cars. We came to know each other because we stuck in the traffic for two hours, or we followed each other so that we are neither too fast or too slowly. We might lose each other after a traffic light or a roundabout. But I am happy to have them with me for such a journey. 
+During this voyage, I formed fleeting bonds with fellow travelers on the road, our cars becoming temporary companions. These serendipitous connections emerged as we navigated through a two-hour standstill in traffic, or seamlessly followed one another's lead, ensuring a harmonious pace. Our paths might diverge at the whim of a traffic light or a roundabout, yet the companionship of these newfound friends elevated the journey's experience, and for that, I am genuinely grateful.
 
 <a href="https://ibb.co/5v7zcWm"><img src="https://i.ibb.co/5v7zcWm/IMG-9094.jpg" alt="IMG-9094" border="0"></a>Picture by Qin
