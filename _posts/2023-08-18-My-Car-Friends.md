@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The things that an 8-year-old can do"
+title:  "My Car Friends"
 date:   2023-08-18 22:00:00
 ---
 
@@ -8,4 +8,4 @@ After a month of driving, I have conquered my fear of being behind the wheel. Th
 
 During this voyage, I formed fleeting bonds with fellow travelers on the road, our cars becoming temporary companions. These serendipitous connections emerged as we navigated through a two-hour standstill in traffic, or seamlessly followed one another's lead, ensuring a harmonious pace. Our paths might diverge at the whim of a traffic light or a roundabout, yet the companionship of these newfound friends elevated the journey's experience, and for that, I am genuinely grateful.
 
-<a href="https://ibb.co/5v7zcWm"><img src="https://i.ibb.co/5v7zcWm/IMG-9094.jpg" alt="IMG-9094" border="0"></a>Picture by Qin
+<a href="https://ibb.co/5v7zcWm"><img src="https://i.ibb.co/sQBD3vn/IMG-9094.jpg" alt="IMG-9094" border="0"></a>Picture by Qin
