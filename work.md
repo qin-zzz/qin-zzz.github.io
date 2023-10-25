@@ -25,4 +25,6 @@ items:
 
 Starting October 2023, I'll be working on three exciting projects as below.
 
-<br/>
+<br />
+
+<br />
