@@ -3,17 +3,25 @@ layout: work
 title: Work
 slug: /work
 items:
-  - title: Benford's law
+  - title: 25H
     image:
-      src: /assets/img/work/benfordslaw.png
-      alt: water
-    description: In many real-life sets of numerical data, the leading digit is likely to be small. In sets that obey the law, the number 1 appears as the leading significant digit about 30% of the time, while 9 appears as the leading significant digit less than 5% of the time. One of the applications is in fraud detection. people who try to fabricate figures tend to distribute the digits uniformly, thus violating Benford's law.
-  - title: Yellow Face
+      src: /assets/img/work/turtle.png
+      alt: turtle
+    description: 25H is like the superhero of time management apps. It takes tasks from your messages, emails and even the course schedules on your phone under your permission and assigns them a cozy spot in your day. But it's not just about organizing your time. 25H is all about positive reinforcement. When you conquer a task, it doesn't just silently check off the box; it throws a virtual party! And, if you ever want to take a stroll down memory lane, 25H keeps a track record of all your triumphs. It's like a highlight reel of your productivity, showing you just how awesome you've been over time.
+
+  - title: KoAlert
     image:
-      src: /assets/img/work/yellowface.png
-      alt: sand
-    description: What’s the harm in a pseudonym? New York Times bestselling sensation Juniper Song is not who she says she is, she didn’t write the book she claims she wrote, and she is most certainly not Asian American—in this chilling and hilariously cutting novel from R. F. Kuang in the vein of White Ivy and The Other Black Girl.
+      src: /assets/img/work/koala.png
+      alt: koala
+    description: KoAlert is like a guardian angel for solo warriors in the world. Just like koalas, who are often solo artists, many people are navigating life alone nowadays. KoAlert steps in when trouble hits, acting as a lifeline. "Ko" stands for cooperation, and "Alert" is the beacon of help. With wearable devices and other methods, it shoots out distress signals to chosen contacts or even nearby good Samaritans. It's a safety net that turns loneliness into a team effort for survival.
+
+  - title: Indoor Navigation and Indoor Positioning
+    image:
+      src: /assets/img/work/dog.png
+      alt: dog
+    description: Picture this: a building's on fire, or it's aftermath of an earthquake—traditional navigation won't cut it. But enter 5G magic! This semester project dives into how 5G can revolutionize indoor navigation, especially when teamed up with a smart robot. Think of it as a high-tech superhero guiding firefighters through chaos, making rescue missions smoother and more effective.
 ---
 
-Currently, I engage in two captivating pursuits that fuel my intellectual curiosity in addition to my studies. The first one is to uncover lesser-known applications of mathematical theories. And the second one is to read novels by R.F. Kuang.<br />
+Starting October 2023, I'll be working on three exciting projects as below.
+
 <br />
