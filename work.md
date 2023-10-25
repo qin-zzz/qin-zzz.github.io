@@ -22,6 +22,7 @@ items:
     description: Picture this: a building's on fire, or it's aftermath of an earthquake—traditional navigation won't cut it. But enter 5G magic! This semester project dives into how 5G can revolutionize indoor navigation, especially when teamed up with a smart robot. Think of it as a high-tech superhero guiding firefighters through chaos, making rescue missions smoother and more effective.
 ---
 
+
 Starting October 2023, I'll be working on three exciting projects as below.
 
-<br />
+<br/>
