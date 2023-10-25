@@ -15,11 +15,11 @@ items:
       alt: koala
     description: KoAlert is like a guardian angel for solo warriors in the world. Just like koalas, who are often solo artists, many people are navigating life alone nowadays. KoAlert steps in when trouble hits, acting as a lifeline. "Ko" stands for cooperation, and "Alert" is the beacon of help. With wearable devices and other methods, it shoots out distress signals to chosen contacts or even nearby good Samaritans. It's a safety net that turns loneliness into a team effort for survival.
 
-  # - title: Indoor Navigation and Indoor Positioning
-  #   image:
-  #     src: /assets/img/work/dog.png
-  #     alt: dog
-  #   description: Picture this: a building's on fire, or it's aftermath of an earthquake—traditional navigation won't cut it. But enter 5G magic! This semester project dives into how 5G can revolutionize indoor navigation, especially when teamed up with a smart robot. Think of it as a high-tech superhero guiding firefighters through chaos, making rescue missions smoother and more effective.
+  - title: Indoor Navigation and Indoor Positioning
+    image:
+      src: /assets/img/work/dog.png
+      alt: dog
+    description: Picture this-a building's on fire, or it's aftermath of an earthquake—traditional navigation won't cut it. But enter 5G magic! This semester project dives into how 5G can revolutionize indoor navigation, especially when teamed up with a smart robot. Think of it as a search dog guiding firefighters through chaos, making rescue missions smoother and more effective.
 ---
 
 
